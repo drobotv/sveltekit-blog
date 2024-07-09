@@ -1,9 +1,7 @@
 import { lucia } from "$lib/server/lucia";
 import { redirect } from "@sveltejs/kit";
 
-import type { PageServerLoad } from "./$types";
-
-export const load: PageServerLoad = async (event) => {
+export async function load(event) {
   const { session } = event.locals;
 
   if (!session) {
@@ -16,4 +14,4 @@ export const load: PageServerLoad = async (event) => {
     ...sessionCookie.attributes
   });
   redirect(302, "/");
-};
+}

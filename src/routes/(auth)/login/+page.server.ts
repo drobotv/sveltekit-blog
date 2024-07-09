@@ -9,12 +9,12 @@ import { Argon2id } from "oslo/password";
 import { setError, superValidate } from "sveltekit-superforms";
 import { valibot } from "sveltekit-superforms/adapters";
 
-export const load = async (event) => {
+export async function load(event) {
   if (event.locals.user) redirect(302, "/");
   return {
     form: await superValidate(valibot(loginSchema))
   };
-};
+}
 
 export const actions = {
   default: async (event) => {
