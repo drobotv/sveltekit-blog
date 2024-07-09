@@ -1,0 +1,16 @@
+{
+  "$schema": "https://inlang.com/schema/inlang-message-format",
+  "user": "User",
+  "auth_no_account": "Don't have an account?",
+  "login": "Login",
+  "password": "Password",
+  "email": "Email",
+  "auth_login_to_account": "Login to your account",
+  "username": "Username",
+  "confirm_password": "Confirm Password",
+  "register": "Register",
+  "already_have_an_account": "Already have an account?",
+  "create_account": "Create an account",
+  "form_err_user_exists": "User already exists.",
+  "form_err_invalid_data": "Invalid username or password."
+}

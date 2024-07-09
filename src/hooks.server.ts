@@ -1,7 +1,9 @@
 import { lucia } from "$lib/server/lucia";
-import type { Handle } from "@sveltejs/kit";
+import { i18n } from "@/lib/i18n";
+import { redirect, type Handle } from "@sveltejs/kit";
+import { sequence } from "@sveltejs/kit/hooks";
 
-export const handle: Handle = async ({ event, resolve }) => {
+export const authHandle: Handle = async ({ event, resolve }) => {
   const sessionId = event.cookies.get(lucia.sessionCookieName);
 
   if (!sessionId) {
@@ -30,5 +32,11 @@ export const handle: Handle = async ({ event, resolve }) => {
   event.locals.user = user;
   event.locals.session = session;
 
+  if (!user && event.route.id?.startsWith("/(protected)")) {
+    redirect(302, "/login");
+  }
+
   return resolve(event);
 };
+
+export const handle = sequence(authHandle, i18n.handle());
