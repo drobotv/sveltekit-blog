@@ -2,7 +2,7 @@ import { db } from "$lib/server/db";
 import { user } from "$lib/server/db/schema";
 import { lucia } from "$lib/server/lucia";
 import { registerSchema } from "$lib/valibot-schema";
-import { m } from "@/lib/i18n.js";
+import { m } from "@/lib/i18n";
 import { fail, redirect } from "@sveltejs/kit";
 import { eq } from "drizzle-orm";
 import { Argon2id } from "oslo/password";
