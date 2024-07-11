@@ -25,7 +25,7 @@
     </div>
 
     <div
-      class="mb-6 h-[45vh] rounded-lg bg-white p-4 shadow-lg md:mb-0 md:flex md:flex-col md:overflow-y-auto"
+      class="mb-6 overflow-x-auto text-wrap rounded-lg bg-white p-4 shadow-lg md:mb-0 md:flex md:flex-col"
     >
       <PreRendered html={data.post.html} />
     </div>
