@@ -37,3 +37,23 @@ export const session = sqliteTable("session", {
   expiresAt: integer("expires_at").notNull(),
   createdAt
 });
+
+export const post = sqliteTable(
+  "post",
+  {
+    id: primaryId,
+    hash: text("hash").notNull().unique(),
+    userName: text("user_name")
+      .notNull()
+      .references(() => user.name),
+    title: text("title").notNull(),
+    markdown: text("markdown").notNull(),
+    html: text("html").notNull(),
+    likesCount: integer("likes_count").notNull(),
+    createdAt,
+    updatedAt
+  },
+  (table) => ({
+    titleIndex: uniqueIndex("post_title_idx").on(table.title)
+  })
+);

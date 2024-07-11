@@ -43,3 +43,17 @@ export const registerSchema = v.pipe(
     ["confirmPassword"]
   )
 );
+
+export const postSchema = v.object({
+  title: v.pipe(
+    v.string(),
+    v.nonEmpty("Please enter a title."),
+    v.minLength(2, "Your title must have 2 characters or more."),
+    v.maxLength(128, "Your title is too long.")
+  ),
+  markdown: v.pipe(
+    v.string(),
+    v.nonEmpty("Please enter some content."),
+    v.maxLength(10000, "Your content is too long.")
+  )
+});
