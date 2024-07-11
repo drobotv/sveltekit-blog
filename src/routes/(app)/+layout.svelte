@@ -32,7 +32,6 @@
           portal={null}
           onSelectedChange={(e) => {
             goto(`/${e?.value}/` + $page.url.pathname.slice(4));
-            console.log(e?.value);
           }}
         >
           <Select.Trigger class="h-9 w-16 ">

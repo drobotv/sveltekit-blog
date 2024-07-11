@@ -37,8 +37,6 @@ export const actions = {
       })
       .returning();
 
-    console.log(newPost);
-
     redirect(302, `/`);
   }
 };
