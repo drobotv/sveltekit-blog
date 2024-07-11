@@ -6,6 +6,14 @@ import { sequence } from "@sveltejs/kit/hooks";
 export const authHandle: Handle = async ({ event, resolve }) => {
   const sessionId = event.cookies.get(lucia.sessionCookieName);
 
+  if (
+    !sessionId &&
+    (event.route.id?.startsWith("/(protected)") ||
+      event.route.id?.includes("/(app)/new"))
+  ) {
+    redirect(302, "/login");
+  }
+
   if (!sessionId) {
     event.locals.user = null;
     event.locals.session = null;
@@ -31,10 +39,6 @@ export const authHandle: Handle = async ({ event, resolve }) => {
 
   event.locals.user = user;
   event.locals.session = session;
-
-  if (!user && event.route.id?.startsWith("/(protected)")) {
-    redirect(302, "/login");
-  }
 
   return resolve(event);
 };

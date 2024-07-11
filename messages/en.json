@@ -12,5 +12,13 @@
   "already_have_an_account": "Already have an account?",
   "create_account": "Create an account",
   "form_err_user_exists": "User already exists.",
-  "form_err_invalid_data": "Invalid username or password."
+  "form_err_invalid_data": "Invalid username or password.",
+  "create_new_post": "Create new post",
+  "confirm": "Confirm",
+  "title": "Title",
+  "not_found": "Not found",
+  "logout": "Logout",
+  "profile": "Profile",
+  "relevant": "Relevant",
+  "latest": "Latest"
 }

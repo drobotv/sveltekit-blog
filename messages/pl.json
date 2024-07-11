@@ -12,5 +12,13 @@
   "already_have_an_account": "Posiadasz już konto?",
   "create_account": "Utwórz konto",
   "form_err_user_exists": "Użytkownik już istnieje.",
-  "form_err_invalid_data": "Nieprawidłowa nazwa użytkownika lub hasło."
+  "form_err_invalid_data": "Nieprawidłowa nazwa użytkownika lub hasło.",
+  "create_new_post": "Utwórz nowy post",
+  "confirm": "Potwierdź",
+  "title": "Tytuł",
+  "not_found": "Not found",
+  "logout": "Wyloguj",
+  "profile": "Profil",
+  "relevant": "Odpowiedni",
+  "latest": "Najnowsze"
 }
